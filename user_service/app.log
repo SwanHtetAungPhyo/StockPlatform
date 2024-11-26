@@ -1,0 +1,12 @@
+[32m[CLOSURE] [0m2024/11/26 19:21:35 Server is listening at the address [32mhttp://localhost::3001
+[32m[CLOSURE] [0m2024/11/26 19:23:20 Received shutdown signal: interrupt
+[32m[CLOSURE] [0m2024/11/26 19:23:20 Shutting down the server .....
+[32m[CLOSURE] [0m2024/11/26 19:23:20 Server is successfully shut down
+[32m[CLOSURE] [0m2024/11/26 19:23:23 Server is listening at the address [32mhttp://localhost::3001
+[32m[CLOSURE] [0m2024/11/26 19:24:06 Received shutdown signal: interrupt
+[32m[CLOSURE] [0m2024/11/26 19:24:06 Shutting down the server .....
+[32m[CLOSURE] [0m2024/11/26 19:24:06 Server is successfully shut down
+[32m[CLOSURE] [0m2024/11/26 19:25:08 Server is listening at the address [32mhttp://localhost::3001
+[32m[CLOSURE] [0m2024/11/26 19:25:55 Received shutdown signal: interrupt
+[32m[CLOSURE] [0m2024/11/26 19:25:55 Shutting down the server .....
+[32m[CLOSURE] [0m2024/11/26 19:25:55 Server is successfully shut down

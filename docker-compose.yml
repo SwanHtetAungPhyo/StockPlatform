@@ -1,0 +1,54 @@
+x-global-env: &global-env
+  JWT_SECRET: "UF/4GCdTitbUiCB/+YuCFFN6OYkZKthe1XQD3gSfBF4="
+  DB_HOST: "postgres"
+  DB_PORT: "5432"
+  DB_USER: "root"
+  DB_PASSWORD: "root"
+  DB_NAME: "finn_tracker"
+  SECRET_KEY: "IN8R81Tx5OZABR2PDCWxgCiMpa3uFzmGibGNNATL3PE="
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - app-network
+    depends_on:
+      - user-service
+  
+  user-service:
+    build: 
+      context: ./user_service
+    environment:
+      <<: *global-env
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: finn_tracker
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
